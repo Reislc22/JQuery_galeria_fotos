@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #5f27cd;
+    padding: 16px;
+    color: #fff;
+    display: flex;
+    border-bottom: 16px solid #341f97;
+    justify-content: center;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+header button {
+    margin-left: 16px;
+}
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;
+    display: none;
+}
+
+form h2 {
+    margin-bottom: 16px;
+}
+
+input,
+button{
+    padding: 8px;
+}
+
+button {
+    background-color: #009432;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+}
+
+#botao-cancelar {
+    background-color: red;
+}
+
+ul {
+/* display flex, para que os elementos fiquem um do lado do outro, e tambem para ficar "Flexicivel" */
+    display: flex;
+/* flex wrap:wrap para que quando chegar no limite(ocupar toda a tela) criar uma nova linha*/
+    flex-wrap: wrap;
+}
+
+ul li {
+/* A largura maxima é 25% assim podendo colocar quatro items ou imagens na tela */
+    max-width: 25%;
+/* list-style é para mecher o tipo que vai ficar pra mostra que é uma lista, nesse caso tirou, para não ficar na imagem */
+    list-style: none;
+/*define um elemento em relação à sua posição normal no fluxo do documento. Por exemplo o absolute, ele só vai ficar RELATIVO a imagem se tiver com o "relative" */
+    position: relative;
+    max-height: 280px;
+/* overflow nesse caso é y porque é na vertical, define que todo conteudo que estiver dentro do li,vai cortar para não utrapassar */
+    overflow-y: hidden;
+}
+
+ul li img {
+/* assim a imagem vai ocupar 100% do espaço que foi definido, assim não estrapola e nem fica menor */
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-imagem-link {
+    padding: 16px;
+    background-color: rgba(0,0,0,0.7);
+/* é uma propriedade em CSS que permite que você posicione um elemento em relação ao seu contêiner mais próximo posicionado, para que ele não vaze, o elemento pai, nesse caso a imagem, tem que ter o position relative */
+    position: absolute;
+/* bottom 0 deixa o mais baixo possivel */
+    bottom: 0;
+/* left 0 deixa o mais pra esquerda possivel, nesse caso em relação a imagem, o position absolute,deixa que não passe do limite da imagem */
+    left: 0;
+    width: 100%;
+/* Opacity é o quanto o conteudo vai aparecer na tela */
+    opacity: 0;
+/* Para poder aparecer devagar e não ficar muito bruto aparecendo do nada(.5s seria meio segundo, o ponto é como se tivesse um zero antes) */
+    transition: all ease .5s;
+}
+
+.overlay-imagem-link a {
+    color: #fff;
+    text-decoration: none;
+}
+/* :hover é usado para aplicar estilos a um elemento quando o usuário passa o cursor sobre ele. */
+ul li:hover .overlay-imagem-link {
+    opacity: 1;
+}
