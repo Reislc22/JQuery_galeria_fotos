@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header,
+form{
+    text-align: center;
+}
+
+ul {
+    text-align:center;
+}
+
+header {
+    padding: 24px;
+}
+
+form{
+    margin-bottom : 16px;
+}
+
+form input,
+form button {
+    padding:8px;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul li {
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    padding: 8px;
+    cursor: pointer;
+}
+
+
+
